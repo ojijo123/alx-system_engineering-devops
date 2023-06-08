@@ -1,2 +1,2 @@
 #!/bin/bash
-chown -c hello:betty=guilaume
+chown -c hello:betty=guillaume

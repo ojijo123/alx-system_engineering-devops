@@ -1,2 +1,2 @@
 #!/bin/bash
-cat << "EOF"
+chown --from=guillaume betty hello

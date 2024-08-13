@@ -1,18 +1,24 @@
 #!/usr/bin/python3
 
-"""
- function that queries the Reddit API and returns the number of subscribers
- """
+    """
+     function that queries the Reddit API and returns the number of subscribers
+    """
 import request
 
+import requests
+
+
 def number_of_subscribers(subreddit):
-    """Define the URL for the subreddit's about page in the Reddit API"""
-    url = f"https://www.reddit.com/r/{subreddit}/about.json"
+    """
+    Function that queries the Reddit API
+    - If not a valid subreddit, return 0.
+    """
+    req = requests.get(
+        "https://www.reddit.com/r/{}/about.json".format(subreddit),
+        headers={"User-Agent": "Custom"},
+    )
 
-    """Set custom User-Agent to avoid Too Many Requests error"""
-    headers = {'User-Agent': 'custom-agent/0.1'}
-
-     if req.status_code == 200:
+    if req.status_code == 200:
         return req.json().get("data").get("subscribers")
     else:
         return 0

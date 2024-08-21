@@ -1,0 +1,20 @@
+echo "Updating packages and installing Requests"
+
+#update paches manager
+sudo apt-get update
+sudo apt-get install -y ngnix
+
+#install pip
+sudo apt-get install -y python3-pip
+
+#install flask, flask_cors, sqlalchemy using pip
+pip install flask
+pip install flask_cors
+pip install sqlalchemy
+
+#install net-tools
+sudo apt install -y net-tools
+
+#install GUNICORN 
+sudo apt-get install -y gunicorn
+
